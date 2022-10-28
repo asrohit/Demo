@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RocketDetails">
+
+    <data>
+        <variable
+            name="rockets"
+            type="com.yotta.demo.model.RocketsItem"/>
+
+        <import type="java.util.List"/>
+        <variable
+            name="list"
+            type="java.util.List&lt;com.yotta.demo.model.Rockets"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/images"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/images"
+            android:layout_marginTop="15dp"
+            android:text="@{rockets.name}"/>
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="15dp"
+            android:text="@{rockets.type}"/>
+
+    </RelativeLayout>
+
+</layout>

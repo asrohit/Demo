@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <data>
+        <variable
+            name="rockets"
+            type="com.yotta.demo.model.Rockets"/>
+
+        <import type="java.util.List"/>
+        <variable
+            name="list"
+            type="java.util.List&lt;com.yotta.demo.model.Rockets"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="3dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    app:image="@{list.flickr_images}"
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image"
+                    android:layout_marginTop="15dp"
+                    android:text="@{rockets.name}"/>
+
+                <TextView
+                    android:id="@+id/type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image"
+                    android:layout_marginTop="15dp"
+                    android:text="@{rockets.type}"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>
